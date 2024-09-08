@@ -1,0 +1,44 @@
+name: tmux
+base: core24
+adopt-info: tmux
+license: ISC
+summary: tmux snap version
+description: |
+  tmux is a terminal multiplexer. It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal.
+  
+  Please note that this is a community-maintained package. Use at your own risk.
+
+platforms:
+  amd64:
+  arm64:
+
+grade: stable
+confinement: classic
+
+apps:
+  tmux:
+    command: usr/local/bin/tmux
+    completer: usr/local/bin/tmux-completion.bash
+
+parts:
+  tmux:
+    plugin: autotools
+    source: https://github.com/tmux/tmux 
+    source-type: git
+    source-tag: '3.4'
+    source-depth: 1
+    override-pull: |
+      craftctl default
+      craftctl set version=$(git describe --tags --abbrev=0)
+    build-packages:
+      - libevent-dev
+      - libncurses-dev
+      - bison
+      - pkg-config
+      - curl
+    override-build: |
+      craftctl default
+      # download bash completion file from another GH repo: https://github.com/imomaliev/tmux-bash-completion
+      curl -fSsL "https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/master/completions/tmux" > $CRAFT_PART_INSTALL/usr/local/bin/tmux-completion.bash
+    stage-packages:
+      - libevent-core-2.1-7t64
