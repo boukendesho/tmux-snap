@@ -27,6 +27,8 @@ parts:
     source-type: git
     source-tag: '3.4'
     source-depth: 1
+    build-attributes:
+      - enable-patchelf
     override-pull: |
       craftctl default
       craftctl set version=$(git describe --tags --abbrev=0)
