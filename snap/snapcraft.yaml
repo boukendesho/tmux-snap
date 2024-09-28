@@ -5,7 +5,7 @@ license: ISC
 summary: tmux snap version
 description: |
   tmux is a terminal multiplexer. It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal.
-  
+
   Please note that this is a community-maintained package. Use at your own risk.
 
 platforms:
@@ -25,7 +25,7 @@ parts:
     plugin: autotools
     source: https://github.com/tmux/tmux 
     source-type: git
-    source-tag: '3.4'
+    source-tag: '3.5'
     source-depth: 1
     build-attributes:
       - enable-patchelf
