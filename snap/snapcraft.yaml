@@ -25,7 +25,7 @@ parts:
     plugin: autotools
     source: https://github.com/tmux/tmux 
     source-type: git
-    source-tag: '3.5'
+    source-tag: '3.5a'
     source-depth: 1
     build-attributes:
       - enable-patchelf
