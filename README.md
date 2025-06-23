@@ -1,7 +1,8 @@
 ## tmux-snap
 [![tmux](https://snapcraft.io/tmux/badge.svg)](https://snapcraft.io/tmux)
 
-[tmux Project Link](https://github.com/tmux/tmux) 
+## Upstream
+[![tmux](https://img.shields.io/github/v/release/tmux/tmux?logo=github)](https://github.com/tmux/tmux)
 
 tmux is a terminal multiplexer. It lets you switch easily between several programs in one terminal, detach them (they keep running in the background) and reattach them to a different terminal.
   
